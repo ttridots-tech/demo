@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-11-21 19:01:12.543198",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member_informations_section",
+  "first_name",
+  "last_name",
+  "full_name",
+  "column_break_bdex",
+  "mobile_no",
+  "mail_id",
+  "age",
+  "gender"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "mail_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Mail Id",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age"
+  },
+  {
+   "fieldname": "member_informations_section",
+   "fieldtype": "Section Break",
+   "label": "Member Informations"
+  },
+  {
+   "fieldname": "column_break_bdex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Dynamic Link",
+   "label": "Gender",
+   "options": "mail_id"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-22 12:25:01.668749",
+ "modified_by": "Administrator",
+ "module": "Demo",
+ "name": "Members",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}

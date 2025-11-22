@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-11-22 12:29:19.691244",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "car",
+  "column_break_wksc",
+  "engine"
+ ],
+ "fields": [
+  {
+   "default": "Select Engine Type",
+   "fieldname": "engine",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Engine",
+   "options": "Select Engine Type\nPetrol\nDiesel"
+  },
+  {
+   "fieldname": "column_break_wksc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "car",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Car"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-22 13:31:56.584091",
+ "modified_by": "Administrator",
+ "module": "Demo",
+ "name": "Cars",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
