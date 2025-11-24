@@ -1,7 +1,14 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "demo.demo.doctype.member.member.approve_member",
+   "action_type": "Server Action",
+   "label": "Approve"
+  }
+ ],
  "autoname": "autoincrement",
  "creation": "2025-11-21 19:01:12.543198",
+ "default_view": "Calendar",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -9,10 +16,15 @@
   "first_name",
   "last_name",
   "full_name",
+  "from_date",
+  "to_date",
   "column_break_bdex",
   "mobile_no",
   "mail_id",
-  "age"
+  "gender",
+  "age",
+  "section_break_fnnm",
+  "childtable"
  ],
  "fields": [
   {
@@ -31,11 +43,14 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Full Name"
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "read_only": 1
   },
   {
    "fieldname": "mobile_no",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Mobile No"
   },
   {
@@ -46,10 +61,12 @@
    "options": "DocType"
   },
   {
+   "depends_on": "eval:doc.gender===\"Male\"",
    "fieldname": "age",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Age"
+   "label": "Age",
+   "mandatory_depends_on": "eval:doc.gender===\"Male\""
   },
   {
    "fieldname": "member_informations_section",
@@ -59,15 +76,51 @@
   {
    "fieldname": "column_break_bdex",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Gender",
+   "options": "Male\nFemale\nOthers",
+   "placeholder": "Select a gender"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "From date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "To date"
+  },
+  {
+   "fieldname": "section_break_fnnm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "childtable",
+   "fieldtype": "Table",
+   "label": "ChildTable",
+   "options": "Sample Child Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-11-22 16:08:37.511698",
+ "is_calendar_and_gantt": 1,
+ "links": [
+  {
+   "link_doctype": "Location",
+   "link_fieldname": "location_name"
+  }
+ ],
+ "modified": "2025-11-24 19:30:41.083530",
  "modified_by": "Administrator",
  "module": "Demo",
- "name": "Members",
+ "name": "Member",
  "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [

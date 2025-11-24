@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class SampleTesting(Document):
+class ProjectTask(Document):
 	pass

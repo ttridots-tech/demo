@@ -1,11 +1,7 @@
-# Copyright (c) 2025, najmudeen and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
 
-
-class Members(Document):
+class Member(Document):
 
 	def validate(self):
 		if not self.age:
@@ -24,17 +20,17 @@ class Members(Document):
 
 
 @frappe.whitelist()
-def get_members_with_empty_email():
-	"""Get members with empty email addresses"""
-	members = frappe.get_all("Members",
+def get_member_with_empty_email():
+	"""Get member with empty email addresses"""
+	member = frappe.get_all("Member",
 		filters={"mail_id": ""},
 		fields=["name", "full_name", "mail_id"]
 	)
-	return members
+	return member
 
 @frappe.whitelist()
 def get_mail_id():
-	email = frappe.db.get_value("Members", "61", "mail_id")
+	email = frappe.db.get_value("Member", "61", "mail_id")
 	return email
 
 
@@ -46,7 +42,7 @@ def create_member():
 	full_name = f"{first_name} {last_name}".strip()
 	
 	member = frappe.get_doc({
-		"doctype": "Members",
+		"doctype": "Member",
 		"first_name": first_name,
 		"last_name": last_name,
 		"full_name": full_name,
@@ -55,3 +51,13 @@ def create_member():
 	})
 	member.insert()
 	return member
+
+@frappe.whitelist()
+def approve_member(names):
+    names = frappe.parse_json(names)
+    for docname in names:
+        doc = frappe.get_doc("Member", docname)
+        doc.status = "Approved"
+        doc.save()
+
+    return "Approved successfully"

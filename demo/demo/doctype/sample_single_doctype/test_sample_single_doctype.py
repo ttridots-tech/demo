@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestMembers(FrappeTestCase):
+class TestSampleSingleDocType(FrappeTestCase):
 	pass
