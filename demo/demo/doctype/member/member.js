@@ -26,17 +26,17 @@ frappe.ui.form.on("Member", {
 
 // ---- Action Buttons
 
-// frappe.ui.form.on("Member", {
-//     refresh(frm) {
-//         frm.add_custom_button("Say Hello", () => {
-//             frappe.msgprint("Hello from custom button!");
-//         });
+frappe.ui.form.on("Member", {
+    refresh(frm) {
+        frm.add_custom_button("Say Hello", () => {
+            frappe.msgprint("Hello from custom button!");
+        });
         
-//         frm.add_custom_button("Open google", () => {
-//             window.open("https://www.google.com/", "_blank");
-//         }, "Action");
-//     },
-// });
+        frm.add_custom_button("Open google", () => {
+            window.open("https://www.google.com/", "_blank");
+        }, "Action");
+    },
+});
 
 frappe.ui.form.on("Member", {
     first_name(frm) {
@@ -54,13 +54,13 @@ frappe.ui.form.on("Member", {
 
 // --- Set Secondary Button
 
-frappe.ui.form.on("Member", {
-    refresh(frm) {
-        frm.page.set_secondary_action("Download PDF", () => {
-            frappe.msgprint("PDF Downloaded!");
-        });
-    }
-});
+// frappe.ui.form.on("Member", {
+//     refresh(frm) {
+//         frm.page.set_secondary_action("Download PDF", () => {
+//             frappe.msgprint("PDF Downloaded!");
+//         });
+//     }
+// });
 
 // --- Set Primary Buttom
 

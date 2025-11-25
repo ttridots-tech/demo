@@ -6,13 +6,16 @@
    "label": "Approve"
   }
  ],
+ "allow_guest_to_view": 1,
+ "allow_import": 1,
  "autoname": "autoincrement",
  "creation": "2025-11-21 19:01:12.543198",
- "default_view": "Calendar",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "member_informations_section",
+  "logo",
   "first_name",
   "last_name",
   "full_name",
@@ -20,16 +23,19 @@
   "to_date",
   "column_break_bdex",
   "mobile_no",
-  "mail_id",
+  "email_id",
   "gender",
   "age",
+  "route",
   "section_break_fnnm",
-  "childtable"
+  "childtable",
+  "connections_tab"
  ],
  "fields": [
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "in_list_view": 1,
    "label": "First Name",
    "reqd": 1
@@ -43,6 +49,7 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
+   "in_filter": 1,
    "in_standard_filter": 1,
    "label": "Full Name",
    "read_only": 1
@@ -52,13 +59,6 @@
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "Mobile No"
-  },
-  {
-   "fieldname": "mail_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Mail Id",
-   "options": "DocType"
   },
   {
    "depends_on": "eval:doc.gender===\"Male\"",
@@ -106,9 +106,35 @@
    "fieldtype": "Table",
    "label": "ChildTable",
    "options": "Sample Child Table"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Logo"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "E-Mail ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
+ "image_field": "logo",
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [
@@ -117,7 +143,8 @@
    "link_fieldname": "location_name"
   }
  ],
- "modified": "2025-11-24 19:30:41.083530",
+ "max_attachments": 1,
+ "modified": "2025-11-25 18:52:49.812686",
  "modified_by": "Administrator",
  "module": "Demo",
  "name": "Member",
@@ -135,8 +162,30 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
   }
  ],
+ "route": "member-list",
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "show_title_field_in_link": 1,
